@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #F5EFFF, #A594F9);
+    padding: 10px;
+  }
+  
+  .navbar-logo,
+  .navbar-nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+  }
+  
+  .navbar-nav a {
+    margin: 0 4em;
+  }
