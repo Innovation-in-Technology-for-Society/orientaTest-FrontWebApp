@@ -1,0 +1,43 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: linear-gradient(to right, #E3E0FD, #AB9EF4);
+    padding: 0 20px 20px 20px;
+    color: #000;
+  }
+  
+  .footer-section {
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  .footer-section h2 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: large;
+  }
+  
+  .nosotros-columns {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .column {
+    flex: 1;
+    padding: 0 10px;
+  }
+  
+  .footer-section p {
+    margin: 5px 0;
+  }
+  
+  .social-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-icons img {
+    height: 30px;
+    margin-right: 10px;
+  }
