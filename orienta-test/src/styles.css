@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --color1: #E5D9F2;
+    --color2: #F5EFFF;
+    --color3: #CDC1FF;
+    --color4: #A594F9;
+    --color5: #7371FC;
+}
+
+body{
+    font-family: Quicksand;
+    background-color: var(--color2);
+}
