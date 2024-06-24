@@ -1,47 +1,52 @@
 <div class="register-container">
-    <h2>Registro de Estudiante</h2>
+  <h2>Registrate</h2>
   
-    <form [formGroup]="form" (ngSubmit)="signup()">
+  <form [formGroup]="form" (ngSubmit)="signup()">
+    <div class="form-row">
       <mat-form-field appearance="fill">
         <mat-label>Nombre</mat-label>
-        <input matInput formControlName="nombre" placeholder="Ingrese su nombre">
+        <input matInput formControlName="nombre" placeholder="Nombre">
         <mat-error *ngIf="controlHasError('nombre', 'required')">El nombre es requerido</mat-error>
       </mat-form-field>
-  
+    
       <mat-form-field appearance="fill">
         <mat-label>Apellido</mat-label>
-        <input matInput formControlName="apellido" placeholder="Ingrese su apellido">
+        <input matInput formControlName="apellido" placeholder="Apellido">
         <mat-error *ngIf="controlHasError('apellido', 'required')">El apellido es requerido</mat-error>
       </mat-form-field>
-  
+    </div>
+    
+    <div class="form-row">
       <mat-form-field appearance="fill">
-        <mat-label>Correo Electrónico</mat-label>
-        <input matInput formControlName="correoElectronico" placeholder="Ingrese su correo electrónico">
-        <mat-error *ngIf="controlHasError('correoElectronico', 'required')">El correo electrónico es requerido</mat-error>
-        <mat-error *ngIf="controlHasError('correoElectronico', 'email')">Ingrese un correo electrónico válido</mat-error>
+        <mat-label>Correo</mat-label>
+        <input matInput formControlName="correoElectronico" placeholder="Correo">
+        <mat-error *ngIf="controlHasError('correoElectronico', 'required')">El correo es requerido</mat-error>
+        <mat-error *ngIf="controlHasError('correoElectronico', 'email')">Ingrese un correo válido</mat-error>
       </mat-form-field>
-  
+    
       <mat-form-field appearance="fill">
         <mat-label>Teléfono</mat-label>
-        <input matInput formControlName="telefono" placeholder="Ingrese su teléfono">
+        <input matInput formControlName="telefono" placeholder="Teléfono">
         <mat-error *ngIf="controlHasError('telefono', 'required')">El teléfono es requerido</mat-error>
       </mat-form-field>
-  
+    </div>
+    
+    <div class="form-row">
       <mat-form-field appearance="fill">
         <mat-label>Dirección</mat-label>
-        <input matInput formControlName="direccion" placeholder="Ingrese su dirección">
+        <input matInput formControlName="direccion" placeholder="Dirección">
         <mat-error *ngIf="controlHasError('direccion', 'required')">La dirección es requerida</mat-error>
       </mat-form-field>
-  
+    
       <mat-form-field appearance="fill">
         <mat-label>Contraseña</mat-label>
-        <input matInput [type]="passwordVisible ? 'text' : 'password'" formControlName="contrasenia" placeholder="Ingrese su contraseña">
+        <input matInput [type]="passwordVisible ? 'text' : 'password'" formControlName="contrasenia" placeholder="Contraseña">
         <mat-icon matSuffix (click)="passwordVisible = !passwordVisible">{{ passwordVisible ? 'visibility_off' : 'visibility' }}</mat-icon>
         <mat-error *ngIf="controlHasError('contrasenia', 'required')">La contraseña es requerida</mat-error>
-        <mat-error *ngIf="controlHasError('contrasenia', 'minlength')">La contraseña debe tener al menos 4 caracteres</mat-error>
+        <mat-error *ngIf="controlHasError('contrasenia', 'minlength')">Debe tener al menos 4 caracteres</mat-error>
       </mat-form-field>
-  
-      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Registrarse</button>
-    </form>
-  </div>
-  
+    </div>
+    
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Crear Cuenta</button>
+  </form>
+</div>

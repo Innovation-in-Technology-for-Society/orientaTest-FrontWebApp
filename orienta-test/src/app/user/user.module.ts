@@ -5,6 +5,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './services/auth.service';
+import { MatIconModule } from '@angular/material/icon';
 
 // Importar módulos de Angular Material necesarios
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,6 +23,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FormsModule,
     ReactiveFormsModule,
     UserRoutingModule,
+    MatIconModule,
     
     // Agregar los módulos de Angular Material aquí
     MatFormFieldModule,
