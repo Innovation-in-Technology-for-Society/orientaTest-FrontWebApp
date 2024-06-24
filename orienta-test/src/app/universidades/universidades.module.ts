@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UniversidadComponent } from './universidad/universidad.component';
 
+import { UniversidadesRoutingModule } from './universidades-routing.module';
+import { UniversidadComponent } from './universidad/universidad.component';
 
 
 @NgModule({
@@ -9,7 +10,8 @@ import { UniversidadComponent } from './universidad/universidad.component';
     UniversidadComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    UniversidadesRoutingModule
   ]
 })
 export class UniversidadesModule { }
