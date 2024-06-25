@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Resultado, ResultadosService } from './services/resultados.service';
 
 @Component({
   selector: 'app-resultados',
@@ -6,14 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './resultados.component.css'
 })
 export class ResultadosComponent implements OnInit {
+  carreraName: string = '';
+  carreraDescription: string = '';
+  univName: string = '';
+  univDescription: string = '';
 
-  carreraName: string = 'Ingeniería de Software';
-  carreraDescription: string = 'Descripción de la carrera de Ingeniería de Software.';
-  univName: string = 'UPC';
-  univDescription: string = 'Descripción de la UPC';
-
-  constructor() { }
+  constructor(private resultadosService: ResultadosService) { }
 
   ngOnInit(): void {
+    const test_id=1;
+
+    this.resultadosService.getResultadoByTestId(test_id).subscribe((resultado: Resultado) => {
+      this.carreraName = resultado.carreraUniversidad.carrera.nombre;
+      this.carreraDescription = resultado.carreraUniversidad.carrera.descripcion;
+      this.univName = resultado.carreraUniversidad.universidad.nombre;
+      this.univDescription = resultado.carreraUniversidad.universidad.correoElectronico;
+    });
   }
 }
