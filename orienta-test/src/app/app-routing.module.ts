@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'universidades', loadChildren: () => import('./universidades/universidades.module').then(m => m.UniversidadesModule) }, 
+  { path: 'home', component: HomeComponent},
 ];
 
 @NgModule({
