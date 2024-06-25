@@ -1,0 +1,59 @@
+.universidades-container {
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.universidad {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px; /* Incrementa el margen inferior para más separación entre bloques */
+  padding: 20px; /* Incrementa el padding para hacer el bloque más grande */
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.1em; /* Incrementa el tamaño de la fuente para hacer el contenido más visible */
+}
+
+.universidad img {
+  width: 70px; /* Incrementa el tamaño de la imagen */
+  height: 70px; /* Incrementa el tamaño de la imagen */
+  margin-right: 20px;
+}
+
+.universidad .info {
+  flex-grow: 1;
+}
+
+.universidad h3 {
+  margin: 0;
+  font-size: 20px; /* Incrementa el tamaño de la fuente del título */
+  color: #333;
+}
+
+.universidad p {
+  margin: 5px 0 0;
+  color: #666;
+}
+
+.universidad span {
+  font-weight: bold;
+}
+
+/* Estilos específicos para cada universidad */
+.universidad.upc {
+  background-color: #e0c3fc;
+}
+
+.universidad.utp {
+  background-color: #ffe3e3;
+}
+
+.universidad.cayetano {
+  background-color: #e0ffe5;
+}
