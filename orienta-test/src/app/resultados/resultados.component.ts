@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Resultado, ResultadosService } from './services/resultados.service';
+import { SharedService } from '../shared/services/shared.service';
 
 @Component({
   selector: 'app-resultados',
@@ -12,16 +13,18 @@ export class ResultadosComponent implements OnInit {
   univName: string = '';
   univDescription: string = '';
 
-  constructor(private resultadosService: ResultadosService) { }
+  constructor(private resultadosService: ResultadosService, private sharedService: SharedService) { }
 
   ngOnInit(): void {
-    const test_id=1;
-
-    this.resultadosService.getResultadoByTestId(test_id).subscribe((resultado: Resultado) => {
-      this.carreraName = resultado.carreraUniversidad.carrera.nombre;
-      this.carreraDescription = resultado.carreraUniversidad.carrera.descripcion;
-      this.univName = resultado.carreraUniversidad.universidad.nombre;
-      this.univDescription = resultado.carreraUniversidad.universidad.correoElectronico;
+    this.sharedService.currentTestId.subscribe(test_id => {
+      if (test_id !== null) {
+        this.resultadosService.getResultadoByTestId(test_id).subscribe((resultado: Resultado) => {
+          this.carreraName = resultado.carreraUniversidad.carrera.nombre;
+          this.carreraDescription = resultado.carreraUniversidad.carrera.descripcion;
+          this.univName = resultado.carreraUniversidad.universidad.nombre;
+          this.univDescription = resultado.carreraUniversidad.universidad.correoElectronico;
+        });
+      }
     });
   }
 }
