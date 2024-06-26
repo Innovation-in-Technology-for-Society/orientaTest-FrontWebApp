@@ -42,7 +42,7 @@ import { UserService } from './user/services/user.service';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }
+    },
     TestService,
     UserService,
     SharedService,
