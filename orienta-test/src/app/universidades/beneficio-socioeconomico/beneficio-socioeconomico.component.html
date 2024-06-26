@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Beneficios Socioeconómicos</h2>
+  <div *ngFor="let beneficio of beneficios" class="beneficio-container">
+    <div class="left-container">
+      <div class="title">
+        <h3>{{ beneficio.nombre }}</h3>
+      </div>
+      <a [routerLink]="['/universidades']">
+        <img
+          src="getLogoUrl(beneficio.nombre)"
+          alt="'Logo ' + beneficio.nombre"
+        />
+      </a>
+      <div class="title">
+        <h3>Ranking</h3>
+      </div>
+      <div>
+        <p>{{ beneficio.ranking }}</p>
+      </div>
+    </div>
+    <div class="right-container">
+      <div class="title">
+        <h3>Beneficio</h3>
+      </div>
+      <ul>
+        <li>{{ beneficio.beneficio }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
