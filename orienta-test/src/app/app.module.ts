@@ -15,6 +15,7 @@ import { SharedService } from './shared/services/shared.service';
 
 import { AuthInterceptor } from './user/interceptor/auth.interceptor';
 import { AuthService } from './user/services/auth.service';
+import { BeneficioService } from './universidades/services/beneficio.service';
 import { TestService } from './test/services/test.service';
 import { UserService } from './user/services/user.service';
 
@@ -36,6 +37,12 @@ import { UserService } from './user/services/user.service';
   providers: [
     provideAnimationsAsync(),
     AuthService,
+    BeneficioService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
     TestService,
     UserService,
     SharedService,
