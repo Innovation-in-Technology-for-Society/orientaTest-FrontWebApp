@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+import { AuthInterceptor } from './user/interceptor/auth.interceptor';
+import { AuthService } from './user/services/auth.service';
+import { BeneficioService } from './universidades/services/beneficio.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     AppRoutingModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    AuthService,
+    BeneficioService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
