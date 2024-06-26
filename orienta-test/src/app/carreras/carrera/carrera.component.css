@@ -1,0 +1,52 @@
+.carreras-container {
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .carrera {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px; 
+    padding: 20px; 
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em; 
+  }
+  
+  .carrera .info {
+    flex-grow: 1;
+  }
+  
+  .carrera h3 {
+    margin: 0;
+    font-size: 20px; 
+    color: #333;
+  }
+  
+  .carrera p {
+    margin: 5px 0 0;
+    color: #666;
+  }
+  
+  .carrera span {
+    font-weight: bold;
+  }
+  
+  .carrera.biomedica {
+    background-color: #aba0e7;
+  }
+  
+  .carrera.medicina {
+    background-color: #AFF2E2;
+  }
+  
+  .carrera.mecatronica {
+    background-color: #D7D8D9;
+  }
