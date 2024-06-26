@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,12 @@ import { HomeComponent } from './home/home.component';
 import { ResultadosModule } from './resultados/resultados.module';
 import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { TestModule } from './test/test.module';
 
+import { AuthInterceptor } from './user/interceptor/auth.interceptor';
+import { AuthService } from './user/services/auth.service';
+import { TestService } from './test/services/test.service';
+import { UserService } from './user/services/user.service';
 
 @NgModule({
   declarations: [
@@ -24,10 +30,19 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     ResultadosModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TestModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    AuthService,
+    TestService,
+    UserService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
