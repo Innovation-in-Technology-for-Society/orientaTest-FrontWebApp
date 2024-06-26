@@ -4,6 +4,7 @@ import { QuestionService } from '../services/question.service';
 import { UserService } from '../../user/services/user.service';
 import { AnswerService } from '../services/answer.service';
 import { TestService } from '../services/test.service';
+import { SharedService } from '../../shared/services/shared.service';
 
 interface Pregunta {
   id: number;
@@ -24,7 +25,8 @@ export class AutopercepcionComponent implements OnInit {
     private userService: UserService,
     private questionService: QuestionService,
     private answerService: AnswerService,
-    private testService: TestService
+    private testService: TestService,
+    private sharedService: SharedService
   ) {}
 
   ngOnInit() {
@@ -66,6 +68,7 @@ export class AutopercepcionComponent implements OnInit {
 
       const test = await this.testService.getCurrentTest(userId).toPromise();
       const testId = test.id;
+      this.sharedService.setTestId(testId);
 
       for (let i = 0; i < this.questions.length; i++) {
         const question = this.questions[i];
