@@ -1,0 +1,18 @@
+.resultados-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.resultados-container h1{
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 32px;
+  color: black;
+}
+
+.resultado {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
