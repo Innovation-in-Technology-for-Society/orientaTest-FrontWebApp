@@ -7,8 +7,8 @@
       </div>
       <a [routerLink]="['/universidades']">
         <img
-          src="getLogoUrl(beneficio.nombre)"
-          alt="'Logo ' + beneficio.nombre"
+          [src]="getLogoUrl(beneficio.nombre)"
+          [alt]="'Logo ' + beneficio.nombre"
         />
       </a>
       <div class="title">
