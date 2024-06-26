@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { ResultadosModule } from './resultados/resultados.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { TestModule } from './test/test.module';
+import { SharedService } from './shared/services/shared.service';
 
 import { AuthInterceptor } from './user/interceptor/auth.interceptor';
 import { AuthService } from './user/services/auth.service';
@@ -37,6 +38,7 @@ import { UserService } from './user/services/user.service';
     AuthService,
     TestService,
     UserService,
+    SharedService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
